@@ -1,0 +1,56 @@
+/* 1. פסקאות */
+p {
+  color: red;
+  font-size: 20px;
+}
+
+p:hover {
+    background-color: violet;
+} 
+
+/* 2. קישורים */
+a {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 3. אפקט ריחוף */
+a:hover {
+  background-color: purple;
+}
+
+/* 4. מחלקה highlight */
+.highlight {
+  background-color: yellow;
+  color: darkblue;
+}
+
+/* 5. מזהה footer */
+#footer {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* 6. סלקטור לפי מאפיין */
+input[type="text"] {
+  background-color: pink;
+}
+
+input[type="email"] {
+  background-color: lightblue;
+}
+
+/* 7. דיב עם מחלקת container */
+.container {
+  background-color: yellow;
+}
+
+/* 8. רק פסקאות בתוך הדיב */
+.container p {
+  background-color: gray;
+  color: green;
+}

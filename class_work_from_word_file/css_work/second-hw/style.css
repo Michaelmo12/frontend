@@ -1,0 +1,63 @@
+/* סגנון בסיסי לכל התיבות */
+div {
+  width: 200px;
+  height: 150px;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+  text-align: center;
+}
+
+/* תיבה 1: box-shadow + text-shadow + רקע */
+div:nth-child(1) {
+  background-color: lightblue;
+  box-shadow: 5px 5px 10px red;
+  text-shadow: 2px 2px 4px black;
+}
+
+/* תיבה 2: גרדיאנט, טקסט לבן וגופן גדול */
+div:nth-child(2) {
+  background: linear-gradient(45deg, orange, purple, cyan);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* תיבה 3: rotate ו־scale */
+    div:nth-child(3) {
+    transform: rotate(10deg) scale(1.2);
+    background-color: #f9c;
+    }
+
+/* תיבה 4: אנימציה של צבע ורוחב */
+div:nth-child(4) {
+  background-color: lightgreen;
+  animation: changeBox 3s infinite alternate;
+}
+
+@keyframes changeBox {
+  from {
+    background-color: lightgreen;
+    width: 200px;
+  }
+  to {
+    background-color: hotpink;
+    width: 300px;
+  }
+}
+
+/* תיבה 5: גופן מותאם אישית */
+@font-face {
+  font-family: 'MagicFont';
+  src: url('magic-font.ttf'); /* ודא שהקובץ נמצא באותה תיקיה */
+}
+
+.custom-font {
+  font-family: 'MagicFont', sans-serif;
+  background-color: #eee;
+}
