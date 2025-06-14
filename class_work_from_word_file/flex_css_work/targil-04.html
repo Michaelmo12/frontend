@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>כרטיסי מידע</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    /* הקונטיינר הראשי של הכרטיסים */
+    #cards {
+      display: flex;             /* מסדר את הכרטיסים בשורה */
+      flex-wrap: wrap;           /* עובר שורה אוטומטית אם אין מקום */
+      gap: 20px;                 /* רווח בין כרטיסים */
+      justify-content: center;   /* ממרכז את כל הכרטיסים במסך */
+      padding: 30px;
+    }
+
+    /* כרטיס בודד */
+    .card {
+      display: flex;              /* מאפשר יישור אנכי */
+      flex-direction: column;     /* סידור אנכי: כותרת -> תוכן -> כפתור */
+      justify-content: space-between;
+      width: 250px;
+      height: 300px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      flex-grow: 1;  /* מאפשר לטקסט לתפוס מקום דינאמי */
+    }
+
+    .card button {
+      padding: 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="cards">
+    <div class="card">
+      <h2>כותרת 1</h2>
+      <p>תוכן קצר על הנושא. מידע מעניין שיוצג בכרטיס.</p>
+      <button>לקריאה נוספת</button>
+    </div>
+
+    <div class="card">
+      <h2>כותרת 2</h2>
+      <p>כאן יש מידע שונה עם אותו עיצוב בדיוק.</p>
+      <button>לקריאה נוספת</button>
+    </div>
+
+    <div class="card">
+      <h2>כותרת 3</h2>
+      <p>טקסט נוסף. כל הכרטיסים באותו גובה, עם ריווח אחיד.</p>
+      <button>לקריאה נוספת</button>
+    </div>
+  </section>
+
+</body>
+</html>

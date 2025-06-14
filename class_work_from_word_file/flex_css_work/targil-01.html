@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>בר עליון עם Flex</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* בר עליון */
+    #top-bar {
+      display: flex;               /* הצגת האלמנטים בשורה */
+      background-color: #333;      /* רקע כהה */
+      color: white;                /* צבע טקסט */
+      padding: 10px 20px;
+      align-items: center;         /* יישור אנכי של האייטמים */
+                 /* כיוון מימין לשמאל (לוגו מימין) */
+    }
+
+    #top-bar div {
+      padding: 10px 15px;
+      background-color: #444;      /* רקע קל שונה לכל כפתור */
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #top-bar div:hover {
+      background-color: #666;      /* צבע רקע בהיר יותר בריחוף */
+    }
+
+    #top-bar div:nth-child(4) {
+      margin-left: auto;           /* לוגו נדחף לצד ימין */
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top-bar">
+    
+    <div>Home</div>
+    <div>About</div>
+    <div>Contact</div>
+    <div>Logo</div>
+  </header>
+
+</body>
+</html>

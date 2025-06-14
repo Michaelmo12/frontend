@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* הקונטיינר הראשי שמחזיק את שני החלקים */
+    #layout {
+      display: flex;               /* מציב את הילדים בשורה */
+      flex-direction: row;         /* סדר רגיל: מימין לשמאל (או משמאל לימין לפי כיוון הדף) */
+      height: 100vh;               /* גובה מלא של המסך */
+    }
+
+    /* הסיידבר */
+    aside {
+      width: 20%;                  /* תופס 20% מהרוחב */
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* אזור התוכן */
+    main {
+      width: 80%;                  /* תופס את שאר הרוחב */
+      background-color: #f5f5f5;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="layout">
+    <aside>
+      <h2>תפריט צד</h2>
+      <ul>
+        <li>דף הבית</li>
+        <li>אודות</li>
+        <li>צור קשר</li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1>תוכן ראשי</h1>
+      <p>זהו אזור התוכן של הדף. הוא תופס 80% מהרוחב ונמצא בצד ימין.</p>
+    </main>
+  </section>
+
+</body>
+</html>

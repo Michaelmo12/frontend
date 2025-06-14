@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגיל 4 - תפריט ניווט אנכי</title>
+  <style>
+    /* תפריט ניווט אנכי */
+    .sidebar {
+      position: fixed;        /* נשאר קבוע גם בגלילה */
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 100%;
+      background-color: #ccc; /* רקע אפור */
+      padding-top: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* פריטי התפריט */
+    .sidebar a {
+      display: block;          /* כל פריט בשורה נפרדת (תפריט אנכי) */
+      color: black;            /* צבע טקסט רגיל */
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    /* אפקט מעבר */
+    .sidebar a:hover {
+      background-color: wheat; /* צבע רקע חיטה במעבר */
+      color: white;            /* טקסט לבן במעבר */
+    }
+
+    /* תוכן הדף */
+    .content {
+      margin-left: 170px; /* כדי שהתוכן לא יתחבא מאחורי התפריט */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <a href="#">About</a>
+    <a href="#">Products</a>
+    <a href="#">Prices</a>
+    <a href="#">Login</a>
+    <a href="#">Register</a>
+  </div>
+
+  <div class="content">
+    <h1 style="direction: rtl;       /* טקסט מימין לשמאל */
+      text-align: right;">ברוך הבא</h1>
+    <p style="direction: rtl;       /* טקסט מימין לשמאל */
+      text-align: right;">תוכן הדף יוצג כאן. נסה לגלול כדי לוודא שהתפריט נשאר במקום.</p>
+    <p style="direction: rtl;       /* טקסט מימין לשמאל */
+      text-align: right;">הוסף כאן עוד תוכן כדי לבדוק את הגלילה...</p>
+  </div>
+
+</body>
+</html>
