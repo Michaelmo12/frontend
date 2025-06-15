@@ -1,0 +1,39 @@
+<!-- file: exercise5.html -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגיל 5 - מערך מתחלף כל 3 שניות</title>
+  <style>
+    #arrayOutput {
+      direction: ltr;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      max-width: 90%;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>תרגיל 5</h2>
+  <div id="arrayOutput"></div>
+
+  <script>
+    function generateArray() {
+      let arr = [];
+      for (let i = 0; i < 100; i++) {
+        arr.push(Math.floor(Math.random() * 100) + 1);
+      }
+      return arr;
+    }
+
+    setInterval(() => {
+      const arr = generateArray();
+      document.getElementById("arrayOutput").innerText = arr.join(", ");
+    }, 3000);
+
+    console.log("המערך מתחלף כל 3 שניות");
+  </script>
+</body>
+</html>

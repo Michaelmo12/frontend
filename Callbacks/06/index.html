@@ -1,0 +1,27 @@
+<!-- file: exercise2.html -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגיל 2 - צבע רנדומלי מתוך 3</title>
+</head>
+<body>
+  <h2>תרגיל 2</h2>
+
+  <script>
+    function amazing(callback) {
+      const paintedColor = callback("Red", "Green", "Blue");
+      document.write("<p>Painted Color: " + paintedColor + "</p>");
+    }
+
+    function pickColor(a, b, c) {
+      const colors = [a, b, c];
+      const index = Math.floor(Math.random() * colors.length);
+      document.body.style.backgroundColor = colors[index];
+      return colors[index];
+    }
+
+    amazing(pickColor);
+  </script>
+</body>
+</html>

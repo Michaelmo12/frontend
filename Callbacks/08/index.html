@@ -1,0 +1,19 @@
+<!-- file: exercise4.html -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגיל 4 - רקע מתחלף</title>
+</head>
+<body>
+  <h2>תרגיל 4</h2>
+
+  <script>
+    const colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"];
+    setInterval(() => {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = color;
+    }, 1000);
+  </script>
+</body>
+</html>
