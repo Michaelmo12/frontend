@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>Cute Animal</title></head>
+<body>
+  <h2>חיה חמודה</h2>
+  <button onclick="runAnimal()">בדוק</button>
+  <p id="result"></p>
+  <script>
+    function isCute(animal) {
+      return ["חתלתול", "כלבלב", "ארנבון", "תוכון"].includes(animal);
+    }
+
+    function generateCuteAnimalAfterDelayAsync() {
+      return new Promise((resolve, reject) => {
+        const animals = ["חתלתול", "כלבלב", "ארנבון", "תוכון", "עקרב", "עכביש", "ג'וק"];
+        setTimeout(() => {
+          const animal = animals[Math.floor(Math.random() * animals.length)];
+          isCute(animal) ? resolve(animal) : reject("חיה לא חמודה: " + animal);
+        }, 1000);
+      });
+    }
+
+    async function runAnimal() {
+      try {
+        const a = await generateCuteAnimalAfterDelayAsync();
+        document.getElementById("result").innerText = "חיה חמודה: " + a;
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>

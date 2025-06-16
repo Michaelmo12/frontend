@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>יום עבודה</title></head>
+<body>
+  <h2>בדיקת יום עבודה</h2>
+  <button onclick="runDay()">בדוק</button>
+  <p id="result"></p>
+  <script>
+    function generateWorkingDayAfterDelayAsync() {
+      return new Promise((resolve, reject) => {
+        const days = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
+        setTimeout(() => {
+          const day = days[Math.floor(Math.random() * days.length)];
+          ["ראשון", "שני", "שלישי", "רביעי", "חמישי"].includes(day)
+            ? resolve(day)
+            : reject("לא יום עבודה: " + day);
+        }, 1000);
+      });
+    }
+
+    async function runDay() {
+      try {
+        const d = await generateWorkingDayAfterDelayAsync();
+        document.getElementById("result").innerText = "יום עבודה: " + d;
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Async</title>
+</head>
+<body>
+  <h2>Prime Number</h2>
+  <input type="number" id="min" placeholder="Min">
+  <input type="number" id="max" placeholder="Max">
+  <button onclick="runPrime()">בדוק</button>
+  <p id="result"></p>
+
+  <script>
+    function isPrime(num) {
+      if (num < 2) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    function generatePrimeNumberAfterDelayAsync(min, max) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const n = Math.floor(Math.random() * (max - min + 1)) + min;
+          if (isPrime(n)) resolve(n);
+          else reject("לא מספר ראשוני: " + n);
+        }, 1000);
+      });
+    }
+
+    async function runPrime() {
+      const min = parseInt(document.getElementById("min").value);
+      const max = parseInt(document.getElementById("max").value);
+      try {
+        const result = await generatePrimeNumberAfterDelayAsync(min, max);
+        document.getElementById("result").innerText = "Prime: " + result;
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>

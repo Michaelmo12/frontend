@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>מערך מהשרת</title></head>
+<body>
+  <h2>קבלת מערך מהשרת</h2>
+  <input id="size" type="number" placeholder="גודל המערך">
+  <button onclick="runArray()">קבל מערך</button>
+  <p id="result"></p>
+  <script>
+    function getArrayFromServerAsync(size) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const n = Math.floor(Math.random() * 100);
+          if (n % 2 === 0) {
+            const arr = Array.from({length: size}, () => Math.floor(Math.random() * 100));
+            resolve(arr);
+          } else {
+            reject("השרת סירב לשלוח מערך (n אי זוגי: " + n + ")");
+          }
+        }, 1000);
+      });
+    }
+
+    async function runArray() {
+      const size = parseInt(document.getElementById("size").value);
+      try {
+        const arr = await getArrayFromServerAsync(size);
+        document.getElementById("result").innerText = "מערך: " + arr.join(", ");
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>פיצה מהשרת</title></head>
+<body>
+  <h2>קבלת פיצה מהשרת</h2>
+  <button onclick="runPizza()">קבל פיצה</button>
+  <p id="result"></p>
+  <script>
+    function getPizzaFromServerAsync() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const n = Math.floor(Math.random() * 100);
+          if (n % 2 === 0) {
+            const pizza = {
+              קוטר: Math.floor(Math.random() * 41) + 10,
+              מחיר: Math.floor(Math.random() * 61) + 20,
+              תוספות: Math.floor(Math.random() * 5)
+            };
+            resolve(pizza);
+          } else {
+            reject("לא ניתן להביא פיצה (n אי זוגי)");
+          }
+        }, 1000);
+      });
+    }
+
+    async function runPizza() {
+      try {
+        const pizza = await getPizzaFromServerAsync();
+        document.getElementById("result").innerText =
+          `🍕 פיצה - קוטר: ${pizza.קוטר}, מחיר: ${pizza.מחיר}₪, תוספות: ${pizza.תוספות}`;
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>7Boom Async</title>
+</head>
+<body>
+  <h2>7Boom</h2>
+  <input type="number" id="min" placeholder="Min">
+  <input type="number" id="max" placeholder="Max">
+  <button onclick="run7Boom()">בדוק</button>
+  <p id="result"></p>
+
+  <script>
+    function generate7BoomAfterDelayAsync(min, max) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const n = Math.floor(Math.random() * (max - min + 1)) + min;
+          if (n % 7 === 0 || n % 10 === 7) resolve(n);
+          else reject("לא 7 בום: " + n);
+        }, 1000);
+      });
+    }
+
+    async function run7Boom() {
+      const min = parseInt(document.getElementById("min").value);
+      const max = parseInt(document.getElementById("max").value);
+      try {
+        const result = await generate7BoomAfterDelayAsync(min, max);
+        document.getElementById("result").innerText = "7Boom: " + result;
+      } catch (err) {
+        document.getElementById("result").innerText = err;
+      }
+    }
+  </script>
+</body>
+</html>
