@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>צבע רקע לפי שעה</title></head>
+<body>
+  <h2>צבע רקע לפי זמן</h2>
+  <script>
+    function changeBackground(callback) {
+      callback();
+    }
+    function applyTimeBasedColor() {
+      const hour = new Date().getHours();
+      if (hour >= 6 && hour < 18) {
+        document.body.style.backgroundColor = "lightyellow"; // בוקר
+      } else {
+        document.body.style.backgroundColor = "darkblue"; // ערב
+        document.body.style.color = "white";
+      }
+    }
+    changeBackground(applyTimeBasedColor);
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מספר רנדומלי לפי קלט</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 40px; }
+    input { font-size: 20px; width: 100px; text-align: center; }
+    #output { font-size: 40px; margin-top: 20px; color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>בחר מספר מקסימלי:</h2>
+  <input type="number" id="maxInput" value="100" />
+  <div id="output">--</div>
+
+  <script>
+    const input = document.getElementById("maxInput");
+    const output = document.getElementById("output");
+
+    setInterval(() => {
+      const max = parseInt(input.value); // לקרוא את הערך בכל פעם מחדש
+      if (!isNaN(max) && max > 0) {
+        const random = Math.floor(Math.random() * (max + 1));
+        output.innerText = random;
+      } else {
+        output.innerText = "נא להזין מספר חוקי";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

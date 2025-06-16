@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>אנימציית גודל פונט</title></head>
+<body>
+  <h2>הגדלה והקטנה של טקסט</h2>
+  <p id="text">טקסט משתנה</p>
+  <script>
+    function animateFont(callback) {
+      callback();
+    }
+    function pulseFont() {
+      let growing = true;
+      let size = 16;
+      setInterval(() => {
+        size += growing ? 2 : -2;
+        if (size >= 40 || size <= 16) growing = !growing;
+        document.getElementById("text").style.fontSize = size + "px";
+      }, 500);
+    }
+    animateFont(pulseFont);
+  </script>
+</body>
+</html>

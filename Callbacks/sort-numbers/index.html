@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>מיון מספרים עם callback</title></head>
+<body>
+  <h2>מיון לפי סדר עולה או יורד</h2>
+  <script>
+    function sortArray(arr, callback) {
+      const sorted = callback(arr);
+      console.log("ממויין:", sorted);
+    }
+    function ascending(arr) {
+      return arr.slice().sort((a, b) => a - b);
+    }
+    function descending(arr) {
+      return arr.slice().sort((a, b) => b - a);
+    }
+    const nums = [42, 11, 99, 3, 50];
+    sortArray(nums, descending);
+  </script>
+</body>
+</html>

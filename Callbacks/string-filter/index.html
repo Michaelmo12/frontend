@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>סינון שמות לפי אות</title></head>
+<body>
+  <h2>סינון שמות שמתחילים באות א</h2>
+  <script>
+    function filterNamesByLetter(names, callback) {
+      const result = callback(names);
+      console.log("תוצאה:", result);
+    }
+    function startsWithAlef(names) {
+      return names.filter(name => name.startsWith("א"));
+    }
+    const namesList = ["אורי", "דן", "אמיר", "יובל", "אביתר"];
+    filterNamesByLetter(namesList, startsWithAlef);
+  </script>
+</body>
+</html>

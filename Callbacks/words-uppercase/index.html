@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>מילים באותיות גדולות</title></head>
+<body>
+  <h2>המרת מילים לאותיות גדולות</h2>
+  <script>
+    function processWords(words, callback) {
+      words.forEach(word => {
+        console.log(callback(word));
+      });
+    }
+    const wordsArray = ["שלום", "עולם", "javascript"];
+    processWords(wordsArray, w => w.toUpperCase());
+  </script>
+</body>
+</html>

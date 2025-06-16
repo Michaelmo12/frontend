@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>הדפסת תווים עם השהיה</title></head>
+<body>
+  <h2>הדפסת תווים בזה אחר זה</h2>
+  <script>
+    function printWithDelay(str, callback) {
+      for (let i = 0; i < str.length; i++) {
+        setTimeout(() => {
+          callback(str[i]);
+        }, i * 1000);
+      }
+    }
+    printWithDelay("שלום עולם", (char) => {
+      document.body.innerHTML += char + "<br>";
+    });
+  </script>
+</body>
+</html>

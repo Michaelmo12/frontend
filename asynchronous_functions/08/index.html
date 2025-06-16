@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>תרגיל 3 - מספר מתחלף כל שנייה</title>
+  <style>
+    button{
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+    <button onclick="handleClick()"> click</button>
+    <div id="output">  ---  </div>
+    <script>
+        function getRandomNumberAfterDelay (callback, limit)
+        {
+            
+            etTimeout(()=>{
+                const number =Math.floor(Math.random()* limit);
+                callback(number);
+            },5000);
+        }
+        
+        function handleClick(){
+            document.getElementById("output").innerText="waiting for the random number";
+            getRandomNumberAfterDelay((number)=>{
+                document.getElementById("output").innerText=`${number}`
+            }, 1);
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>Callback לפי תנאי</title></head>
+<body>
+  <h2>בדיקת זוגיות עם שתי פונקציות</h2>
+  <script>
+    function checkNumber(num, callbackEven, callbackOdd) {
+      if (num % 2 === 0) {
+        callbackEven();
+      } else {
+        callbackOdd();
+      }
+    }
+    checkNumber(7, 
+      () => console.log("המספר זוגי"), 
+      () => console.log("המספר אי-זוגי"));
+  </script>
+</body>
+</html>

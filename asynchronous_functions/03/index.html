@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>הצגה אסינכרונית של מספרים</title>
+</head>
+<body>
+
+  <script>
+    // פונקציית עזר להצגת טקסט על הדף
+    function display(text) {
+      const p = document.createElement("p");
+      p.innerText = text;
+      document.body.appendChild(p);
+    }
+
+    // הצגה סינכרונית
+    display("Start");
+
+    // שלושה setTimeout להצגה אסינכרונית של מספרים
+    setTimeout(() => {
+      const num1 = Math.floor(Math.random() * 101);
+      display(num1);
+    }, 3000);
+
+    setTimeout(() => {
+      const num2 = Math.floor(Math.random() * 101);
+      display(num2);
+    }, 5000);
+
+    setTimeout(() => {
+      const num3 = Math.floor(Math.random() * 101);
+      display(num3);
+    }, 7000);
+
+    // סיום מיד אחרי Start
+    display("End");
+  </script>
+
+</body>
+</html>

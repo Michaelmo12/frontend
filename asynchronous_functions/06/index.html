@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>צבע ירוק ואז הודעה</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>לחץ לצבוע ירוק ואז להציג הודעה</h2>
+  <button onclick="paintAndAlert()">צבע ואז הודעה</button>
+
+  <script>
+    function paintAndAlert() {
+      // קודם צובעים את הדף
+      document.body.style.backgroundColor = "green";
+
+      // מחכים רגע קטן כדי לאפשר לדפדפן לצייר, ואז מציגים את ההתראה
+      //setTimeout(() => {
+      //  alert("Done");
+      //}, 100); // 100ms זה מספיק
+        alert("Done");
+    }
+  </script>
+
+</body>
+</html>
+<!-- This code creates a simple webpage that changes the background color to green when a button is clicked, and then shows an alert after a short delay. -->
+<!-- The delay allows the browser to render the color change before showing the alert. -->

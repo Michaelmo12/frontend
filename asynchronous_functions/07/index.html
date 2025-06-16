@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מספר רנדומלי לאחר 5 שניות</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+    #output {
+      margin-top: 30px;
+      font-size: 28px;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>קבל מספר רנדומלי לאחר עיכוב</h2>
+  <button onclick="handleClick()">הצג מספר</button>
+  <div id="output">--</div>
+
+  <script>
+    // פונקציה שמחכה 5 שניות ואז מפעילה callback עם מספר רנדומלי
+    function getRandomNumberAfterDelay(callback) {
+      setTimeout(() => {
+        const randomNumber = Math.floor(Math.random() * 101); // 0–100
+        callback(randomNumber);
+      }, 5000);
+    }
+
+    // בלחיצה על כפתור
+    function handleClick() {
+      document.getElementById("output").innerText = "מחכה...";
+      getRandomNumberAfterDelay((number) => {
+        document.getElementById("output").innerText = `המספר: ${number}`;
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מיקום המשתמש - בלי פונקציות חץ</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    span {
+      font-weight: bold;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>קבל את מיקום המשתמש</h2>
+  <button onclick="getLocation()">הצג מיקום</button>
+
+  <p>
+    קו רוחב: <span id="lat">---</span><br>
+    קו אורך: <span id="lon">---</span><br>
+    <span id="error" style="color: red;"></span>
+  </p>
+
+  <script>
+    // פונקציית הצלחה
+    function handleSuccess(position) {
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
+
+      document.getElementById("lat").innerText = lat.toFixed(5);
+      document.getElementById("lon").innerText = lon.toFixed(5);
+    }
+
+    // פונקציית שגיאה
+    function handleError(error) {
+      document.getElementById("error").innerText = "שגיאה: " + error.message;
+    }
+
+    // פונקציית קריאה במיקום
+    function getLocation() {
+      // ניקוי נתונים קודמים
+      document.getElementById("lat").innerText = "---";
+      document.getElementById("lon").innerText = "---";
+      document.getElementById("error").innerText = "";
+
+      // בדיקה אם הדפדפן תומך במיקום
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
+      } else {
+        document.getElementById("error").innerText = "הדפדפן שלך לא תומך במיקום.";
+      }
+    }
+  </script>
+
+</body>
+</html>

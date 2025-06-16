@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>מספרים רנדומליים - רק זוגיים</title></head>
+<body>
+  <h2>מספרים רנדומליים - זוגיים</h2>
+  <script>
+    function generateNumbers(callback) {
+      let arr = [];
+      for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 50) + 1);
+      }
+      callback(arr);
+    }
+    function filterEven(numbers) {
+      const evens = numbers.filter(n => n % 2 === 0);
+      console.log("זוגיים:", evens);
+    }
+    generateNumbers(filterEven);
+  </script>
+</body>
+</html>

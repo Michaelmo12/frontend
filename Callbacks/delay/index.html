@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>פונקציית delay</title></head>
+<body>
+  <h2>delay(callback, time)</h2>
+  <script>
+    function delay(callback, time) {
+      setTimeout(callback, time);
+    }
+    delay(() => {
+      alert("הפונקציה רצה לאחר השהייה!");
+    }, 2000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head><meta charset="UTF-8"><title>הכפלת מספר עם callback</title></head>
+<body>
+  <h2>Callback שמכפיל מספר</h2>
+  <script>
+    function applyToNumber(num, callback) {
+      const result = callback(num);
+      console.log("תוצאה:", result);
+    }
+    function multiply(n) {
+      return n * 2;
+    }
+    applyToNumber(7, multiply);
+  </script>
+</body>
+</html>
