@@ -1,0 +1,108 @@
+/* Global styles and CSS variables */
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --background-color: #ffffff;
+  --text-color: #213547;
+  --border-radius: 8px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+/* Common utility classes */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-large);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* HomePage specific styles using CSS variables */
+.home-page {
+  padding: var(--spacing-large);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-page h1 {
+  color: var(--primary-color);
+  font-size: var(--font-size-large);
+  margin-bottom: var(--spacing-large);
+}
+
+.home-page button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+}
+
+.home-page button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Button component styles */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  border-radius: var(--border-radius);
+}
+
+.btn--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn--secondary {
+  background-color: #f0f0f0;
+  color: var(--text-color);
+  border: 1px solid #ccc;
+}
+
+.btn--small {
+  padding: var(--spacing-small);
+  font-size: var(--font-size-small);
+}
+
+.btn--medium {
+  padding: var(--spacing-small) var(--spacing-medium);
+  font-size: var(--font-size-medium);
+}
+
+.btn--large {
+  padding: var(--spacing-medium) var(--spacing-large);
+  font-size: var(--font-size-large);
+}
